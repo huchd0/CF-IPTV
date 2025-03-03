@@ -81,7 +81,7 @@ if ! grep -q "server_name $FEIYANG_IP;" "$NGINX_CONF_PATH"; then
             root /www; \\
             index index.html index.htm; \\
         } \\
-        location /allinone.m3u { \\
+        location /mytv.m3u { \\
             root /www; \\
             default_type application/octet-stream; \\
             allow all; \\
@@ -94,7 +94,7 @@ fi
 
 # 下载并修改M3U文件
 M3U_URL="https://raw.githubusercontent.com/huchd0/CF-IPTV/refs/heads/main/mytv.m3u"
-M3U_PATH="/www/allinone.m3u"
+M3U_PATH="/www/mytv.m3u"
 echo "下载M3U文件..."
 wget --no-check-certificate -O "$M3U_PATH" "$M3U_URL"
 echo "修改M3U文件中的设备IP..."
